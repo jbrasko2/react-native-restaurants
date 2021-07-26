@@ -1,16 +1,14 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import SearchBar from '../components/SearchBar'
 
-const SearchScreen = () => {
+const RestaurantList = () => {
   return (
     <View>
-      <Text>Search Screen</Text>
-      <SearchBar />
+      <Text></Text>
     </View>
   )
 }
 
-export default SearchScreen
+export default RestaurantList
 
 const styles = StyleSheet.create({})
