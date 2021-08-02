@@ -6,6 +6,7 @@ import yelp from '../api/yelp'
 const SearchScreen = () => {
   const [term, setTerm] = useState('')
   const [results, setResults] = useState([])
+  const [error, setError] = useState('')
 
   const searchApi = async () => {
     try {
@@ -20,7 +21,7 @@ const SearchScreen = () => {
       // .data comes from axios - entire response
       setResults(response.data.businesses)
     } catch (err) {
-      console.log(err)
+      setError('Something went wrong!')
     }
   }
 
@@ -28,6 +29,7 @@ const SearchScreen = () => {
     <View>
       <Text>Search Screen</Text>
       <SearchBar term={term} onTermChange={setTerm} onTermSubmit={searchApi} />
+      {error ? <Text>{error}</Text> : null}
       <Text>We have found {results.length} results.</Text>
     </View>
   )
