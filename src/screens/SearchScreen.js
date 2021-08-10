@@ -14,18 +14,22 @@ const SearchScreen = () => {
 
   return (
     <View>
-      <Text>Search Screen</Text>
       <SearchBar
         term={term}
         onTermChange={setTerm}
         onTermSubmit={() => searchApi(term)}
       />
       {error ? <Text>{error}</Text> : null}
-      <Text>We have found {results.length} results.</Text>
+      <Text style={{ marginLeft: 15 }}>
+        We have found {results.length} results.
+      </Text>
       <ResultsList results={filterResultsByPrice('$')} title='Cost Effective' />
       <ResultsList results={filterResultsByPrice('$$')} title='Bit Pricier' />
       <ResultsList results={filterResultsByPrice('$$$')} title='Big Spender' />
-      <ResultsList results={filterResultsByPrice('$$$$')} title='Super Big Spender' />
+      <ResultsList
+        results={filterResultsByPrice('$$$$')}
+        title='Super Big Spender'
+      />
     </View>
   )
 }
