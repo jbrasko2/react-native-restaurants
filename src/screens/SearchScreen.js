@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import SearchBar from '../components/SearchBar'
 import yelp from '../api/yelp'
@@ -9,6 +9,7 @@ const SearchScreen = () => {
   const [error, setError] = useState('')
 
   const searchApi = async searchTerm => {
+    console.log('search')
     try {
       const response = await yelp.get('/search', {
         // params appended to request URL, e.g. /search/wendys
@@ -24,6 +25,10 @@ const SearchScreen = () => {
       setError('Something went wrong!')
     }
   }
+
+  useEffect(() => {
+    searchApi('pasta')
+  }, [])
 
   return (
     <View>
