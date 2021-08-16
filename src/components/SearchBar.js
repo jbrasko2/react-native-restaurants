@@ -19,8 +19,6 @@ const SearchBar = ({ term, onTermChange, onTermSubmit }) => {
   )
 }
 
-export default SearchBar
-
 const styles = StyleSheet.create({
   backgroundStyle: {
     backgroundColor: 'lightgray',
@@ -42,3 +40,6 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
   },
 })
+
+export default SearchBar
+
