@@ -40,7 +40,7 @@ const ResultsList = ({ title, results, navigation }) => {
 
 const styles = StyleSheet.create({
   title: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 'bold',
     marginLeft: 15,
     marginBottom: 5,
